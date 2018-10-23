@@ -7,7 +7,7 @@
        </div>
        <div class="menuList">
            <ul>
-               <li v-for='(item,index) in menuList' :key="index" :class="item.img.split('.')[0]" @click="bankLIstPage()">
+               <li v-for='(item,index) in menuList' :key="index" :class="item.img.split('.')[0]" @click="goToPage(item.url)">
                    <img :src="'static/home/menu/'+item.img"  alt="">
                    <p>{{item.text}}</p>
                </li>
@@ -48,7 +48,7 @@ export default {
   data:function(){
       return{
           menuList:[
-              {text:"办信用卡",img:'card.png'},
+              {text:"办信用卡",img:'card.png',url:"/banklist"},
               {text:"进度查询",img:'serch.png'},
               {text:"开始赚钱",img:'vip.png'},
               {text:"兑换中心",img:'dui.png'},
@@ -63,6 +63,9 @@ export default {
       }
   },
   methods:{
+    goToPage:function(url){
+          this.$router.push(url)
+    }
 
   }
     
