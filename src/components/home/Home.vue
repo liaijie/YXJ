@@ -2,12 +2,12 @@
    <div class="home">
        <div class="header">
            <!-- 顶部图片 -->
-           <img class="bg" src="static/home/banner.png" alt="">
-           <img class="logo" src="static/home/logo.png" alt="">
+           <img class="bg" src="static/home/menu/banner.png" alt="">
+           <img class="logo" src="static/home/menu/logo.png" alt="">
        </div>
        <div class="menuList">
            <ul>
-               <li v-for='(item,index) in menuList' :key="index" :class="item.img.split('.')[0]">
+               <li v-for='(item,index) in menuList' :key="index" :class="item.img.split('.')[0]" @click="bankLIstPage()">
                    <img :src="'static/home/menu/'+item.img"  alt="">
                    <p>{{item.text}}</p>
                </li>
@@ -61,6 +61,9 @@ export default {
             {title:'浦发梦竟信用卡',info:"ROG电竞鼠标、鼠标垫",img:"02.png",top:"线下活动体验",bot:"新户专享"},
         ]
       }
+  },
+  methods:{
+
   }
     
 }
