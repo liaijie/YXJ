@@ -5,14 +5,18 @@
 </template>
 
 <script>
+import Footer from './components/footer/Footer'
+
 export default {
   name: 'App',
   components: {
+    Footer,
   
   }
 }
 </script>
 
-<style>
+<style lang="less">
+
 
 </style>

@@ -6,6 +6,7 @@ import App from './App'
 import 'lib-flexible/flexible.js'
 // 引入路由
 import router from './router/router.js'
+// 引入footer组件
 // Vue.config.productionTip = false
 
 /* eslint-disable no-new */
