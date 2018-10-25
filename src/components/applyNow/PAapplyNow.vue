@@ -1,0 +1,22 @@
+<template>
+    <ApplyNow class="applyNow" :imgUrl="img" :guid="bank"></ApplyNow>
+</template>
+<script>
+//引入立即办卡模版组件
+import ApplyNow from  './ApplyNow' 
+console.log("666")
+export default {
+    //注册组件
+    components:{
+        ApplyNow,
+    },
+    data:function(){
+        return{
+            img:"pa.jpg",
+            bank:'/PAguid'
+        }
+    }
+}
+</script>
+<style lang="less" scoped>
+</style>

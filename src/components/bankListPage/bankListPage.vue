@@ -4,27 +4,30 @@
           <div class="swiper-container">
             <div class="swiper-wrapper" >
                 <div class="swiper-slide" v-for="(item,index) in headerSwiper" :key="index" >
-                    <router-link to="/">
+                    <router-link :to="item.url">
                       <img :src="'static/applyCard/headerSwiper/'+item.img" alt="">
                     </router-link>
                 </div>
             </div>
           <div class="swiper-pagination"></div>
+          <Message class="msg">66666</Message>
         </div>
         <!-- 银行列表 -->
         <div class="bankList">
               <p class="title">快速办卡</p>
               <ul>
-                <li v-for="(item,index) in bankList" :key="index">
-                  <div>
-                       <img :src="'static/applyCard/bankList/' + item.img" alt="">
-                  </div>
-                  <div>
-                      <span class='bankName'>{{item.text}}</span>
-                      <span class='info'>{{item.info}}</span>
-                  </div>
-                  
-                </li>
+                <router-link  v-for="(item,index) in bankList" :key="index" tag="li" :to="item.url">
+                        <div>
+                          <img :src="'static/applyCard/bankList/' + item.img" alt="">
+                        </div>
+                        <div>
+                            <span class='bankName'>{{item.text}}</span>
+                            <span class='info'>{{item.info}}</span>
+                        </div>
+                        <span v-if="item.tag !=''"  class="tag">
+                          <img :src="'static/applyCard/bankList/'+item.tag" alt="">
+                        </span>
+                </router-link>
               </ul>
         </div>
         <Footer class="footer"></Footer>
@@ -35,12 +38,14 @@
 import Swiper from 'swiper';
 import 'swiper/dist/css/swiper.min.css';
 import Footer from '../footer/Footer'
+import Message from "./Message"
 
 export default {
     components:{
         //注册轮播组件
         Swiper,
-        Footer
+        Footer,
+        Message
     },
     mounted:function(){
       var mySwiper = new Swiper('.swiper-container', {
@@ -60,19 +65,21 @@ export default {
   data:function(){
       return {
         headerSwiper:[
-          {img:"jtyh.jpg",url:""},
-          {img:"msyh.jpg",url:""},
-          {img:"zxyh.jpg",url:""},
+          {img:"jtyh.jpg",url:"/JTapplyNow"},
+          {img:"msyh.jpg",url:"/MSapplyNow"},
+          {img:"zxyh.jpg",url:"/ZXapplyNow"},
         ],
         bankList:[
-          {text:"交通银行",img:"jt.png",url:"",info:"星期五5%优惠",tag:""},
-          {text:"中信银行",img:"zx.png",url:"",info:"新户得拉杆箱",tag:""},
-          {text:"民生银行",img:"ms.png",url:"",info:"最快三秒审核",tag:""},
-          {text:"平安银行",img:"pa.png",url:"",info:"每周三享五折",tag:""},
-          {text:"光大银行",img:"gd.png",url:"",info:"10元享电影、美食",tag:""},
-          {text:"工商银行",img:"gs.png",url:"",info:"境外消费31%返现",tag:""},
-          {text:"上海银行",img:"sh.png",url:"",info:"消费满立减",tag:""},
-          {text:"广发银行",img:"gf.png",url:"",info:"新户消费返现6%",tag:""},
+          {text:"交通银行",img:"jt.png",url:"/JTapplyNow",info:"星期五5%优惠",tag:"zhp.png"},
+          {text:"中信银行",img:"zx.png",url:"/ZXapplyNow",info:"新户得拉杆箱",tag:"gep.png"},
+          {text:"民生银行",img:"ms.png",url:"/MSapplyNow",info:"最快三秒审核",tag:"yxp.png"},
+          {text:"平安银行",img:"pa.png",url:"/PAapplyNow",info:"每周三享五折",tag:"mpp.png"},
+          {text:"光大银行",img:"gd.png",url:"/GDapplyNow",info:"10元享电影、美食",tag:"yxp.png"},
+          {text:"工商银行",img:"gs.png",url:"/GSapplyNow",info:"境外消费31%返现",tag:""},
+          {text:"上海银行",img:"sh.png",url:"/SHapplyNow",info:"消费满立减",tag:""},
+          {text:"广发银行",img:"gf.png",url:"/GFapplyNow",info:"新户消费返现6%",tag:""},
+          {text:"中国银行",img:"zg.png",url:"/ZGapplyNow",info:"免年费，优惠多",tag:""},
+          {text:"浦发银行",img:"pf.png",url:"/PFapplyNow",info:"送4888刷卡金",tag:""},
         ]
 
     }
@@ -97,6 +104,7 @@ export default {
         position:relative;
       .swiper-container{
         margin-bottom: .266667rem;
+        position:relative;
         .swiper-slide{
           img{
             width:100%;
@@ -120,12 +128,14 @@ export default {
             overflow: hidden;
             li{
               width:50%;
-              height:3.043333rem;
+              // height:3.043333rem;
+              height:3.08rem;
               box-sizing: border-box;
               float: left;
               border-bottom:1px solid #e6e6e6;
               padding-left: .333333rem;
               padding-top: .866667rem;
+              position:relative;
               div{
                 float: left;
                 text-align: center;
@@ -142,6 +152,17 @@ export default {
                 }
                 }
               }
+              .tag{
+                display:block;
+                width:.693333rem;
+                height:.373333rem;
+                position:absolute;
+                top:.933333rem;
+                right:.4rem;
+                img{
+                  width:100%;
+                }
+              }
               &:nth-child(odd){
                   border-right:1px solid #e6e6e6;
               }
@@ -149,7 +170,12 @@ export default {
             }
           }
       }
-    
+      .msg{
+        position:absolute;
+        top:0;
+        left:1.333333rem;
+        z-index:10;
+      }
   }
 
 </style>
