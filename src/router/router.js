@@ -23,6 +23,7 @@ import ZGapplyNow from '../components/applyNow/ZGapplyNow'
 import ZGguid from "../components/guid/ZGguid"
 import PFapplyNow from '../components/applyNow/PFapplyNow'
 import PFguid from "../components/guid/PFguid"
+import ApplyInfo from '../components/applyinfo/ApplyInfo'
 // 安装路由
 Vue.use(VueRouter)
 //定义路由规则
@@ -49,17 +50,11 @@ var routes = [
     {path:'/ZGguid',name:'ZGguid',component:ZGguid},
     {path:'/PFapplyNow',name:'PFapplyNow',component:PFapplyNow},
     {path:'/PFguid',name:'PFguid',component:PFguid},
-
-
-
-
-
-
-    
-
+    {path:'/ApplyInfo',name:'ApplyInfo',component:ApplyInfo},
 
     {path:'*',name:'home',component:Home}
 
 ]
 
+// 创建路由实例并挂载路由
 export default  new VueRouter({routes})

@@ -1,5 +1,5 @@
 <template>
-    <ApplyNow  :imgUrl="img" :guid="bank"></ApplyNow>
+    <ApplyNow  :imgUrl="img" :guid="guid" :bank="bank"></ApplyNow>
 </template>
 <script>
 //引入立即办卡模版组件
@@ -13,7 +13,8 @@ export default {
     data:function(){
         return{
             img:"sh.jpg",
-            bank:'/SHguid'
+            guid:'/SHguid',
+            bank:'SH'
         }
     }
 }

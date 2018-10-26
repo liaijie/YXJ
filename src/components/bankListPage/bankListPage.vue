@@ -10,7 +10,7 @@
                 </div>
             </div>
           <div class="swiper-pagination"></div>
-          <Message class="msg">66666</Message>
+          <Message class="msg"></Message>
         </div>
         <!-- 银行列表 -->
         <div class="bankList">

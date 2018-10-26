@@ -11,16 +11,26 @@
         </router-link>
         <div class="goHome">
         </div>
-        <div class="btn">立即办卡</div>
+        <div class="btn" @click="fillInfo">立即办卡</div>
         <Footer></Footer>
     </div>
 </template>
 <script>
 import Footer from '../footer/Footer'
 export default {
-    props:['imgUrl','guid'],
+    props:['imgUrl','guid','bank'],
     components:{
         Footer
+    },
+    methods:{
+        fillInfo:function(){
+            this.$router.push({
+                name:"ApplyInfo",
+                params:{
+                    bank:this.bank
+                }
+            })
+        }
     }
 }
 </script>
