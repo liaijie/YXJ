@@ -24,6 +24,7 @@ import ZGguid from "../components/guid/ZGguid"
 import PFapplyNow from '../components/applyNow/PFapplyNow'
 import PFguid from "../components/guid/PFguid"
 import ApplyInfo from '../components/applyinfo/ApplyInfo'
+import TermsDetail from "../components/termsdetail/TermsDetail"
 // 安装路由
 Vue.use(VueRouter)
 //定义路由规则
@@ -51,6 +52,7 @@ var routes = [
     {path:'/PFapplyNow',name:'PFapplyNow',component:PFapplyNow},
     {path:'/PFguid',name:'PFguid',component:PFguid},
     {path:'/ApplyInfo',name:'ApplyInfo',component:ApplyInfo},
+    {path:'/TermsDetail',name:'TermsDetail',component:TermsDetail},
 
     {path:'*',name:'home',component:Home}
 

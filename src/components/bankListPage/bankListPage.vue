@@ -31,6 +31,7 @@
               </ul>
         </div>
         <Footer class="footer"></Footer>
+        <GoHome></GoHome>
     </div>
 </template>
 <script>

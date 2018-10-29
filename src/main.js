@@ -6,8 +6,11 @@ import App from './App'
 import 'lib-flexible/flexible.js'
 // 引入路由
 import router from './router/router.js'
+// 引入返回主页组件
+import GoHome from "./components/common/gohome/GoHome"
 // 引入footer组件
 // Vue.config.productionTip = false
+Vue.component("GoHome",GoHome)
 
 /* eslint-disable no-new */
 new Vue({

@@ -6,11 +6,7 @@
             <!-- <img src="static/applyNow/zs.jpg" alt=""> -->
         </div>
         <router-link tag="span" :to="guid" class="guid">办卡指南</router-link>
-        <router-link tag="span" to="/" class="goHome">
-                <img src="static/applyNow/home.png" alt="">
-        </router-link>
-        <div class="goHome">
-        </div>
+        <GoHome></GoHome>
         <div class="btn" @click="fillInfo">立即办卡</div>
         <Footer></Footer>
     </div>
@@ -81,17 +77,6 @@ html,body{
         right:0;
         font-size:.32rem;
         border-radius: .133333rem 0 0 .133333rem;
-    }
-    span.goHome{
-            width: 1.173333rem;
-            height: 1.173333rem;
-            position:fixed;
-            right:0;
-            bottom:4.8rem;
-        img{
-            width: 1.173333rem;
-            height: 1.173333rem;
-        }
     }
 }
 
